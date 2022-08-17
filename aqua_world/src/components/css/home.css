@@ -1,0 +1,34 @@
+.home{
+    border: 1px solid red;
+    width: 99%;
+    margin: auto;
+    background-color: rgb(255, 250, 243);
+}
+.catagory{
+    display: grid;
+    width: 99%;
+    grid-template-columns: repeat(3 ,6fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.catagory >div{
+    /* border:  1px solid blue; */
+    width: 63%;
+    height:300px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 40px;
+    /* border-radius: 50%; */
+    
+}
+
+.catagory >div > img{
+    height: 100%;
+    width:100%;
+    object-fit: cover;
+    border-radius: 50%;
+
+ 
+}
