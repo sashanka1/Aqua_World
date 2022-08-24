@@ -2,19 +2,15 @@ import "./css/home.css"
 import {CatagoryContect} from "../context/catagorycontext"
 import { useContext } from "react";
 
-import { useNavigate } from "react-router-dom";
+
 
 
 
 
 function Home(){
-    // let navigate = useNavigate();
-    // navigate("/product")
-const {catagory} = useContext(CatagoryContect)
+  
 const {handlecatagory} = useContext(CatagoryContect)
 
-
-// catagory,handlecatagory
    return(
 
        <>

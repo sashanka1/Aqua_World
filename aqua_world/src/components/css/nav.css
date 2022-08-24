@@ -48,10 +48,11 @@ margin-top: 1.3%;
         width: 26vw;
        justify-items:center;
        text-align: center;
-    /* border: 1px solid green; */
+    
     position:relative;
     margin-top: 2.6%;
     font-size: 4vw;
+    /* border: 1px solid green; */
     }
     .right_div{
         height: 50%;
