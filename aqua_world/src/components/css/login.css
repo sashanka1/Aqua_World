@@ -1,0 +1,28 @@
+.login{
+    height: 400px;
+    width: 300px;
+    /* border: 1px solid red; */
+    margin: auto;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    
+}
+.login>input{
+    height: 30px;
+     width:97%;
+     margin: auto;
+     margin-top: 10px;
+     position: relative;
+
+}
+.login >button{
+    height: 30px;
+    width: 100px;
+    background-color: rgb(22, 91, 97);
+    margin: auto;
+    margin-top: 20px;
+    margin-left: 100px;
+    color: aqua;
+}

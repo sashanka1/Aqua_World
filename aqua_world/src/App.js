@@ -5,6 +5,7 @@ import {Navbar} from "./components/navbar"
 import {Home} from "./components/home"
 import {Product} from "./components/product"
 import {Cart} from "./components/cart"
+import {Login} from "./components/login"
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
      
 
       <Routes>
-      {/* <Route path= {"/login"} element= {<Login/>}></Route> */}
+      <Route path= {"/login"} element= {<Login/>}></Route>
       {/* <Route path = {"/product/:id"} element = {<Product/>}></Route> */}
       <Route path = "/" element= {<Home/>}></Route>
       <Route path = {"/product"} element = {<Product/>}></Route>
