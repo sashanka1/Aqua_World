@@ -10,28 +10,33 @@
 
 
 .left_div{
-    height: 50%;
-    width: 15vw;
+    height: 100%;
+    width: 17vw;
    justify-items:center;
    text-align: center;
 /* border: 1px solid green; */
 position:relative;
-margin-top: 1.3%;
+/* margin-top: 1.3%; */
 font-size: 2vw;
 }
+.left_div > a{
+    text-decoration: none;
+    color: black;
+}
 .right_div{
-    height: 50%;
-    width: 25vw;
+    height: 100%;
+    width: 35vw;
     display: flex;
     justify-content: space-around;
     /* border: 1px solid green; */
     position:relative;
-margin-top: 1.3%;
+/* margin-top: 1.3%; */
 }
 .right_div button{
-    height: 20px;
-    width: 60px;
+    height:96%;
+    width: 120px;
     border: none;
+    /* border: 1px solid green; */
     background-color:rgb(9, 167, 167);
     
 }

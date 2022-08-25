@@ -1,30 +1,25 @@
-.catagoryofp{
-    text-align: center;
-    width: 300px;
-    margin: auto;
-}
-
-.cards{
+.cartmain{
     display: grid;
-    grid-template-columns: repeat(3, 4fr);
+    grid-template-columns: repeat(4, 3fr);
     width: 99%;
     border: 1px solid red;
+    margin-top: 20px;
 }
-.card{
+.cartitm{
     height: 250px;
     width: 200px;
     border: 1px solid green;
     align-items: center;
     justify-content: center;
 }
-.card>img{
+.cartitm>img{
     height: 50%;
     width: 99%;
     /* border: 1px solid blue; */
   
 
 }
-.card>h3{
+.cartitm>h3{
     
     /* border: 1px solid blue; */
     height: 30px;
@@ -34,7 +29,7 @@
     text-align: center;
     font-size: 20px;
 }
-.card>button{
+.cartitm>button{
     margin: auto;
     height: 30px;
     width:180px;
