@@ -17,7 +17,7 @@ function Signin() {
     setFromdata({ ...formdata, [e.target.name]: e.target.value });
   };
   const submit = async() => {
-    console.log(formdata);
+    // console.log(formdata);
 
      let resp = await fetch("http://localhost:5400/register", {
         method:"post",
@@ -25,11 +25,17 @@ function Signin() {
             username: formdata.username,
             email: formdata.email,
             password: formdata.password,
-            state:formdata.state,
-            dist: formdata.dist,
-            areaPin: formdata.areaPin,
-            landmark: formdata.landmark,
-            mobileNo: formdata.mobileNo,  // adding  product to cart
+            adresses:[
+                {
+                    name:formdata.username,
+                    state:formdata.state,
+                    dist: formdata.dist,
+                    areaPin: formdata.areaPin,
+                    landmark: formdata.landmark,
+                    mobileNo: formdata.mobileNo,
+                },
+            ]
+             // adding  product to cart
 
         }),
         headers:{

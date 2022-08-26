@@ -1,19 +1,30 @@
 import React from "react";
 import {CartCountContext} from "../context/cart_count_context";
+import{IsuserContext} from "../context/isoth.context";
 import { useContext, useEffect } from "react";
 import "./css/nav.css"
 import { Link } from "react-router-dom";
 function Navbar(){
   const {cartcount} = useContext(CartCountContext);
   const {updateCartCount} = useContext(CartCountContext);
-  
+  const {islogedin} = useContext(IsuserContext)
+  const{verifylogdin} = useContext(IsuserContext)
 
   const cartPCount = async()=>{
-    let data = await fetch("http://localhost:5400/cartp");
-    let res = await data.json();
-    //console.log(res);
+      var res = verifylogdin();
+     console.log("islogedin",res)
+     
+        if(res===true){
+            console.log("inside count in nav")
+            let data = await fetch("http://localhost:5400/cartp");
+        let res = await data.json();
+        //console.log(res);
+       
+        updateCartCount(res.length)
+        }
+     
    
-    updateCartCount(res.length)
+    
 }
 useEffect(()=>{
     cartPCount();

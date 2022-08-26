@@ -5,17 +5,20 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { CatagoryContextProvider } from './context/catagorycontext';
 import {BrowserRouter} from "react-router-dom";
-import {CartCountContextProvider} from "./context/cart_count_context"
+import {CartCountContextProvider} from "./context/cart_count_context";
+import{IsuserContextProvider} from "./context/isoth.context"
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
    
     <BrowserRouter>
+    <IsuserContextProvider>
     <CartCountContextProvider>
     <CatagoryContextProvider>
     <App />
     </CatagoryContextProvider>
     </CartCountContextProvider>
+    </IsuserContextProvider>
     </BrowserRouter>
     
   </React.StrictMode>

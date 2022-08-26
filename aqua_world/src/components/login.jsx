@@ -1,6 +1,7 @@
 import "./css/login.css"
 import { useState } from "react"
 
+
 function Login(){
     const [logindata, setLogindata]  = useState({
         email:"",
@@ -9,13 +10,35 @@ function Login(){
     const handlechange = (e)=>{
         setLogindata({...logindata,[e.target.name]:e.target.value })
     }
-    const handleclick = ()=>{
+    const handleclick = async()=>{
         console.log(logindata)
+        let resp = await fetch("http://localhost:5400/login", {
+        method:"post",
+        body:JSON.stringify({
+            email: logindata.email,
+            password:logindata.password,
+             // adding  product to cart
+
+        }),
+        headers:{
+            "content-Type":"application/json",
+        },
+        
+    }).then((res) => {
+        return res.json();
+        });
+        console.log( "login_resp",resp)
+        if(resp.user){
+            alert("login success")
+            localStorage.setItem("user",JSON.stringify(resp))
+        }
+
+
     }
     return(
         <div className="login">
             <input type="text" name = "email" value={logindata.email} placeholder="enter email" onChange={handlechange}/>
-            <input type="text" placeholder="enter password" name = "password" value={logindata.password} onChange={handlechange} />
+            <input type="password" placeholder="enter password" name = "password" value={logindata.password} onChange={handlechange} />
              <button  onClick={()=>{handleclick()}}>login</button>
         </div>
     )
