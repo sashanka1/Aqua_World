@@ -30,7 +30,7 @@ useEffect(()=>{
         <div className="right_div">
         <button><Link to="/cart">cart: {cartcount}</Link></button>
        <button><Link to="/login">login</Link></button>
-       <button><Link to="/logout">logout</Link></button>
+       <button><Link to="/signin">signin</Link></button>
 
        <Link to="/"></Link>
         </div>
