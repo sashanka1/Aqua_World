@@ -6,6 +6,8 @@
     const {cartcount} = useContext(CartCountContext);
     const setcart= async(e)=>{
         console.log(e)
+        var userdetalis = JSON.parse(localStorage.getItem("user"))|| []
+        console.log("inside show product",userdetalis.user._id)
         await fetch("http://localhost:5400/cartp", {
             method:"post",
             body:JSON.stringify({
@@ -13,7 +15,8 @@
                 name:e.name,
                 image:e.image,
                 price:e.price,
-                catagory:e.catagory  // adding  product to cart
+                catagory:e.catagory,
+                userId:userdetalis.user._id // adding  product to cart
     
             }),
             headers:{

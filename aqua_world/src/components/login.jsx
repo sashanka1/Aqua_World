@@ -31,6 +31,7 @@ function Login(){
         if(resp.user){
             alert("login success")
             localStorage.setItem("user",JSON.stringify(resp))
+            window.location.reload()
         }
 
 
