@@ -1,5 +1,5 @@
 .home{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 99%;
     margin: auto;
     background-color: rgb(255, 250, 243);
@@ -32,4 +32,45 @@
     border-radius: 50%;
 
  
+}
+
+
+@media only screen and (min-width :0px) and (max-width:400px) {
+
+    .catagory{
+        display: grid;
+        width: 99%;
+        grid-template-columns: repeat(2 ,6fr);
+        gap: 1px;
+        justify-content: center;
+        align-items: center;
+    }
+    .catagory >div{
+        /* border:  1px solid blue; */
+        width: 80%;
+        height:150px;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        margin-top: 15px;
+        /* border-radius: 50%; */
+        cursor:pointer;
+        
+    }
+    
+    .catagory >div > img{
+        height: 100%;
+        width:100%;
+        object-fit: cover;
+        border-radius: 50%;
+    
+     
+    }
+
+    .home{
+        /* border: 1px solid red; */
+        width: 99%;
+        margin: auto;
+        background-color: rgb(255, 254, 252);
+    }
 }

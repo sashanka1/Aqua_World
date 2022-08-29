@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(4, 3fr);
     width: 99%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     margin-top: 20px;
 }
 .cartitm{
@@ -11,10 +11,12 @@
     border: 1px solid green;
     align-items: center;
     justify-content: center;
+    border-radius: 5%;
 }
 .cartitm>img{
     height: 50%;
-    width: 99%;
+    width: 99.8%;
+    border-radius: 5%;
     /* border: 1px solid blue; */
   
 
@@ -38,5 +40,79 @@
     background-color: rgb(40, 197, 197);
     border-radius:5px;
     margin-left: 8px;
+    cursor: pointer;
   
+}
+
+.paymentcont{
+    border: 3px solid rgb(18, 21, 18);
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+}
+.paymentcont>p{
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+    /* border: 1px solid green; */
+    width: 250px;
+    margin: auto;
+    align-self: flex-end;
+}
+.paymentcont>button{
+    height: 40px;
+    width: 120px;
+    background-color: rgb(44, 180, 185);
+    font-size: 20px;
+    border-radius: 5px;
+    position: relative;
+    margin-left: calc((100% - 120px)/2);
+    margin-top: 10px;
+    cursor: pointer;
+   
+    
+}
+
+@media only screen and (min-width :0px) and (max-width:400px) {
+
+    .cartmain{
+        display: grid;
+        grid-template-columns: repeat(1, 6fr);
+        width: 99%;
+        /* border: 1px solid red; */
+        margin-top: 20px;
+    }
+    .cartitm{
+        height: 230px;
+        width: 55%;
+       margin: auto;
+       margin-top: 25px;
+        border: 1px solid green;
+        align-items: center;
+        justify-content: center;
+    }
+    .cartitm>img{
+        height: 50%;
+        width: 99.8%;
+        /* border: 1px solid blue; */
+      
+    
+    }
+   
+    .cartitm>button{
+        margin: auto;
+        height: 30px;
+        width:180px;
+        margin: auto;
+        margin-top: 20px;
+        background-color: rgb(40, 197, 197);
+        border-radius:5px;
+        margin-left: 4.5px;
+      
+    }
+
 }
