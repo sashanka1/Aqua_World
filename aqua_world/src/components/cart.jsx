@@ -12,7 +12,7 @@ function Cart(){
     const cartdata = async()=>{
         console.log("the cartdata of the user");
         var userdetalis = JSON.parse(localStorage.getItem("user"))|| []
-        let data = await fetch(`http://localhost:5400/cartp?theuser=${userdetalis.user._id}`);
+        let data = await fetch(`https://backend-api-sss.herokuapp.com/cartp?theuser=${userdetalis.user._id}`);
         let res = await data.json();
         console.log("the cartdata of the user" ,res);
         Setcartitm([...res]);

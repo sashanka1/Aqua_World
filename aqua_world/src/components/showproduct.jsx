@@ -8,7 +8,7 @@
         console.log(e)
         var userdetalis = JSON.parse(localStorage.getItem("user"))|| []
         console.log("inside show product",userdetalis.user._id)
-        await fetch("http://localhost:5400/cartp", {
+        await fetch("https://backend-api-sss.herokuapp.com/cartp", {
             method:"post",
             body:JSON.stringify({
                 main_id:e._id,

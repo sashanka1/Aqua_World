@@ -4,6 +4,7 @@
     padding: 0%;
 }
 
+
 .navdiv{
     height: 80px;
      width: 99%;
@@ -55,6 +56,29 @@ font-size: 2vw;
     font-size: 1.6vw;
     color: rgb(12, 56, 12);
     
+}
+.popup{
+   background-color: rgb(36, 160, 160);
+   height: 200px;
+   width: 100px; 
+   position: absolute;
+   z-index: 3;
+   margin-right: 10px;
+   margin-top: 35px;
+}
+.popup >ul{
+    text-align: center;
+    font-size: larger;
+
+}
+
+.popup >ul>a{
+    text-align: center;
+    font-size: larger;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+
 }
 
 @media only screen and (min-width :0px) and (max-width:420px) {

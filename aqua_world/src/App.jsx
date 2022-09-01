@@ -1,5 +1,5 @@
 
-// import './App.css';
+ import './App.css';
 import {Routes , Route} from "react-router-dom";
 import {Navbar} from "./components/navbar"
 import {Home} from "./components/home"
@@ -26,6 +26,7 @@ function App() {
       <Route path = {"/cart/payment"} element = {<Payment/>}></Route>
       <Route path = {"/cart/payment/conform"} element = {<Thanks/>}></Route>
      </Routes>
+     <footer></footer>
     </div>
   );
 }

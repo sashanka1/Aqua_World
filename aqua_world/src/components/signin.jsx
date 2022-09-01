@@ -14,12 +14,18 @@ function Signin() {
     mobileNo: "",
   });
   const handlechange = (e) => {
-    setFromdata({ ...formdata, [e.target.name]: e.target.value });
+    
+      setFromdata({ ...formdata, [e.target.name]: e.target.value });
+    
+  
+    
   };
   const submit = async() => {
     // console.log(formdata);
-
-     let resp = await fetch("http://localhost:5400/register", {
+    if(formdata.username.length >0 && formdata.email.includes("@") && formdata.password.length>3 && formdata.conform_password===formdata.password &&
+    formdata.state.length>0 && formdata.areaPin>=6 && formdata.landmark.length>10 && formdata.mobileNo.length>=10){
+      
+      let resp = await fetch("https://backend-api-sss.herokuapp.com/register", {
         method:"post",
         body:JSON.stringify({
             username: formdata.username,
@@ -46,6 +52,14 @@ function Signin() {
         return res.json();
         });
         console.log( "resp",resp)
+        
+
+    }
+    else{
+      alert("invalid details")
+    }
+
+     
 
 
 
@@ -57,6 +71,7 @@ function Signin() {
         name="username"
         value={formdata.username}
         placeholder="enter your name"
+        required
         onChange={handlechange}
       />
       <input
@@ -64,6 +79,7 @@ function Signin() {
         name="email"
         value={formdata.email}
         placeholder="enter your email"
+        required
         onChange={handlechange}
       />
       <input
@@ -71,6 +87,7 @@ function Signin() {
         name="password"
         value={formdata.password}
         placeholder="enter password"
+        required
         onChange={handlechange}
       />
       <input
@@ -78,6 +95,7 @@ function Signin() {
         name="conform_password"
         value={formdata.conform_password}
         placeholder="conform password"
+        required
         onChange={handlechange}
       />
       <input
@@ -85,6 +103,7 @@ function Signin() {
         name="state"
         value={formdata.state}
         placeholder="state"
+        required
         onChange={handlechange}
       />
       <input
@@ -92,6 +111,7 @@ function Signin() {
         name="dist"
         value={formdata.dist}
         placeholder="dist"
+        required
         onChange={handlechange}
       />
       <input
@@ -99,6 +119,7 @@ function Signin() {
         name="areaPin"
         value={formdata.areaPin}
         placeholder="area pin code"
+        required
         onChange={handlechange}
       />
       <input
@@ -106,6 +127,7 @@ function Signin() {
         name="landmark"
         value={formdata.landmark}
         placeholder="landmark"
+        required
         onChange={handlechange}
       />
       <input
@@ -113,6 +135,7 @@ function Signin() {
         name="mobileNo"
         value={formdata.mobileNo}
         placeholder="mobile no"
+        required
         onChange={handlechange}
       />
       <button onClick={submit}>singin</button>

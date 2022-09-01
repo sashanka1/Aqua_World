@@ -8,7 +8,7 @@
     let {cartitm} = data
     const {cartdata} = data;
      const remove_item  = async(e)=>{
-        await fetch(`http://localhost:5400/cartp/${e._id}`,{
+        await fetch(`https://backend-api-sss.herokuapp.com/cartp/${e._id}`,{
             method:"DELETE",
             headers:{
                 "content-Type":"application/json" //delete items from the cart

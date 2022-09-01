@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+footer{
+  height: 40px;
+  width: 100%;
+  background-color: rgb(44, 180, 185);
+  margin-top: 50px;
+}

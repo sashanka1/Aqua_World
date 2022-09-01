@@ -70,8 +70,9 @@
     font-size: 20px;
     border-radius: 5px;
     position: relative;
-    margin-left: calc((100% - 120px)/2);
+    margin-left: calc((100vw - 120px)/2);
     margin-top: 10px;
+    /* margin-right: 5px; */
     cursor: pointer;
    
     

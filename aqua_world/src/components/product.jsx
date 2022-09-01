@@ -12,7 +12,7 @@ const [productlist, setProductlist]= useState([]);
 
 
 const getdata = async()=>{
-    let data = await fetch(`http://localhost:5400/aquap?pr_ca=${catagory}`)
+    let data = await fetch(`https://backend-api-sss.herokuapp.com/aquap?pr_ca=${catagory}`)
     let res = await data.json();
     setProductlist([...res])
     console.log(res);
