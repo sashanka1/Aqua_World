@@ -54,10 +54,10 @@ useEffect(()=>{
                     <div className={'popup'}>
                         <ul><Link to="/login">Login</Link></ul>
                         <ul><Link to="/signin">Signin</Link></ul>
-                        <ul>Adress</ul>
+                        <ul><Link to="/adress">Address</Link></ul>
                         <ul>Profile</ul>
                         <ul>Orders</ul>
-                        <ul>Adress</ul>
+                        <ul>Address</ul>
                     </div>
             </ClickAwayListener>
         )}

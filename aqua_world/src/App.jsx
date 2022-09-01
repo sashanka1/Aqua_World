@@ -8,7 +8,9 @@ import {Cart} from "./components/cart"
 import {Login} from "./components/login"
 import {Signin} from "./components/signin";
 import{Payment} from "./components/payment";
-import{Thanks} from "./components/conform"
+import{Thanks} from "./components/conform";
+import{Adress} from "./components/address";
+import{Addnewaddress} from "./components/addnewAddress"
  
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
       <Route path = {"/cart"} element = {<Cart/>}></Route>
       <Route path = {"/cart/payment"} element = {<Payment/>}></Route>
       <Route path = {"/cart/payment/conform"} element = {<Thanks/>}></Route>
+      <Route path = {"/adress"} element = {<Adress/>}></Route>
+      <Route path = {"/Modifyaddress"} element = {<Addnewaddress/>}></Route>
      </Routes>
      <footer></footer>
     </div>
