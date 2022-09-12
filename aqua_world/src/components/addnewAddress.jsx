@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Adress } from "./address";
 // import "./css/signin.css";
 
 function Addnewaddress(){
@@ -23,6 +24,26 @@ function Addnewaddress(){
       };
       const submit = async() => {
          console.log(address);
+         let userId = JSON.parse(localStorage.getItem("user"))
+         let theid = userId.user._id
+        //  console.log(theid)
+
+          await fetch(`https://backend-api-sss.herokuapp.com/update_address?userId=${theid}`, {
+          method:"PATCH",
+          body:JSON.stringify({
+            name: address.name,
+            state: address.state,
+            dist: address.dist,
+            areaPin:address.areaPin,
+            landmark:address.landmark,
+            mobileNo:address.mobileNo,
+  
+          }),
+          headers:{
+              "content-Type":"application/json",
+          },
+          
+      })
         
          
     
