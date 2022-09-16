@@ -2,9 +2,11 @@ import { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import {CartCountContext} from  "../context/cart_count_context"
 import{Cartitm} from "./showCartitom"
+import {Circles} from "react-loader-spinner"
 import "./css/cart.css"
 function Cart(){
     const navigatetopayment = useNavigate();
+    const [loder,Setloder]= useState(true);
      const {updateCartCount} = useContext(CartCountContext);
     const[cartitm, Setcartitm] = useState([]);
     const [totalamount , setTotalamount] = useState();
@@ -39,6 +41,7 @@ function Cart(){
     },[])
     return(
         <>
+        
         <div className="cartmain">
 
  <Cartitm data= {{cartitm, cartdata}}/>
