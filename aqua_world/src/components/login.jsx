@@ -14,7 +14,7 @@ function Login(){
         setLogindata({...logindata,[e.target.name]:e.target.value })
     }
     const handleclick = async()=>{
-        console.log(logindata)
+        //console.log(logindata)
         let resp = await fetch("https://backend-api-sss.herokuapp.com/login", {
         method:"post",
         body:JSON.stringify({
@@ -30,7 +30,7 @@ function Login(){
     }).then((res) => {
         return res.json();
         });
-        console.log( "login_resp",resp)
+        //console.log( "login_resp",resp)
         if(resp.user){
             alert("login success")
             localStorage.setItem("user",JSON.stringify(resp))

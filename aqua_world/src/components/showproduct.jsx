@@ -1,11 +1,15 @@
  import {nanoid} from "nanoid";
+ import { IsuserContext } from "../context/isoth.context";
  import {React, useContext} from "react"
  import {CartCountContext} from "../context/cart_count_context";
  function Showproduct({data}){
+    const {verifylogdin} = useContext(IsuserContext)
     const {updateCartCount} = useContext(CartCountContext);
     const {cartcount} = useContext(CartCountContext);
     const setcart= async(e)=>{
-        console.log(e)
+        const checkuser = verifylogdin();
+        if(checkuser){ // checking the user is logind in or not
+            console.log(e)
         var userdetalis = JSON.parse(localStorage.getItem("user"))|| []
         console.log("inside show product",userdetalis.user._id)
         await fetch("https://backend-api-sss.herokuapp.com/cartp", {
@@ -25,6 +29,10 @@
             
         });
         updateCartCount(cartcount+1)
+        } else{
+            alert("Please loged in to continue")
+        }
+        
       }
 //   catagory: "fish"
 // image: "https://thumbs.dreamstime.com/b/neon-tetra-freshwater-aquarium-paracheirodon-innesi-142408408.jpg"
