@@ -17,7 +17,7 @@ const getdata = async()=>{
     let data = await fetch(`https://backend-api-sss.herokuapp.com/aquap?pr_ca=${catagory}`)
     let res = await data.json();
     setProductlist([...res])
-    console.log(res);
+    //console.log(res);
     Setloder(false);
 }
 useEffect(()=>{

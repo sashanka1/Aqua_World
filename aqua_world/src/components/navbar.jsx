@@ -2,34 +2,51 @@ import React from "react";
 import { AiFillSetting } from 'react-icons/ai';
 import { BsFillCartCheckFill } from 'react-icons/bs';
 import ClickAwayListener from 'react-click-away-listener';
-
+import { useNavigate } from "react-router-dom";
 import {CartCountContext} from "../context/cart_count_context";
 import{IsuserContext} from "../context/isoth.context";
-import { useContext,useState, useEffect } from "react";
+import { useContext,useState, useEffect} from "react";
 import "./css/nav.css"
 import { Link } from "react-router-dom";
 function Navbar(){
+    let navigate  =useNavigate();
   const {cartcount} = useContext(CartCountContext);
   const {updateCartCount} = useContext(CartCountContext);
   const {islogedin} = useContext(IsuserContext)
   const{verifylogdin} = useContext(IsuserContext)
-  const [popup, setPopup] = useState(false)
+  const [popup, setPopup] = useState(false);
+  const[theuser,setUserpresent] = useState(false);
   const cartPCount = async()=>{
       var res = verifylogdin();
-     console.log("islogedin",res)
+    // console.log("islogedin",res)
      
         if(res===true){
-            console.log("inside count in nav")
+          //  console.log("inside count in nav")
             var userdetalis = JSON.parse(localStorage.getItem("user"))|| []
             let data = await fetch(`https://backend-api-sss.herokuapp.com/cartp?theuser=${userdetalis.user._id}`);
         let res = await data.json();
         //console.log(res);
        
         updateCartCount(res.length)
-        }
-     
-   
-    
+        } 
+}
+
+const showCartOrNot = ()=>{
+    const UserLogindinOrNOt = verifylogdin();
+    if(UserLogindinOrNOt ===true){
+        setUserpresent(true)
+    }
+    else{
+        setUserpresent(false)
+    }
+
+    if(theuser===true){
+        
+        navigate("/cart")
+    }
+    else{
+        alert("please logedin to continue")
+    }
 }
 useEffect(()=>{
     cartPCount();
@@ -45,7 +62,7 @@ useEffect(()=>{
          <Link to="/">Aqua World</Link>
         </div>
         <div className="right_div">
-        <button><Link to="/cart"><BsFillCartCheckFill/> {cartcount}</Link></button>
+        <button onClick={()=>{{showCartOrNot()}}}><BsFillCartCheckFill/>{cartcount}</button>
        {/* <button><Link to="/login">login</Link></button>
        <button><Link to="/signin">signin</Link></button> */}
         <button onClick={() => setPopup(true)}><AiFillSetting/></button>{/*rem */}
@@ -69,7 +86,7 @@ useEffect(()=>{
        
 
            </div>  
-           </nav>     
+        </nav>     
        </>
    )
 }

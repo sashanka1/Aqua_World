@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./css/signin.css";
+import { useNavigate } from "react-router-dom";
 
 function Signin() {
   const [formdata, setFromdata] = useState({
@@ -13,6 +14,7 @@ function Signin() {
     landmark: "",
     mobileNo: "",
   });
+  const navigateToTheLogin = useNavigate();
   const handlechange = (e) => {
     
       setFromdata({ ...formdata, [e.target.name]: e.target.value });
@@ -53,7 +55,10 @@ function Signin() {
         });
         console.log( "resp",resp)
         
-
+          if(resp.token){
+            alert("register successful")
+            navigateToTheLogin("/login")
+          }
     }
     else{
       alert("invalid details")

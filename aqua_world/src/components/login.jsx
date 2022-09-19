@@ -1,8 +1,11 @@
 import "./css/login.css"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom";
 
 
 function Login(){
+    const navigateToHome = useNavigate();
+    
     const [logindata, setLogindata]  = useState({
         email:"",
         password : ""
@@ -31,7 +34,11 @@ function Login(){
         if(resp.user){
             alert("login success")
             localStorage.setItem("user",JSON.stringify(resp))
-            window.location.reload()
+            // window.location.reload()
+            navigateToHome("/")
+        }
+        else{
+            alert("Invalid details")
         }
 
 

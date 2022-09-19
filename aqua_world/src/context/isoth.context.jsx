@@ -8,7 +8,7 @@ const [islogedin , setLogdin] = useState(false)
 const verifylogdin = ()=>{
 
 var user = JSON.parse(localStorage.getItem("user"))|| [];
-console.log("user in nav", user)
+//console.log("user in nav", user)
 if(user.length===0){
     setLogdin(false);
 }
