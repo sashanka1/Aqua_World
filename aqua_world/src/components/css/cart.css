@@ -70,12 +70,19 @@
     font-size: 20px;
     border-radius: 5px;
     position: relative;
-    margin-left: calc((100vw - 120px)/2);
+    /* margin-left: calc((100vw - 120px)/2); */
     margin-top: 10px;
+    margin-right: 5px;
     /* margin-right: 5px; */
     cursor: pointer;
    
     
+}
+.emptyCartimg{
+    /* border: 5px solid red; */
+    position: relative;
+    width: 60%;
+    height: 80vh;
 }
 
 @media only screen and (min-width :0px) and (max-width:400px) {
@@ -107,13 +114,19 @@
     .cartitm>button{
         margin: auto;
         height: 30px;
-        width:180px;
+        width:98%;
         margin: auto;
         margin-top: 20px;
         background-color: rgb(40, 197, 197);
         border-radius:5px;
-        margin-left: 4.5px;
+        /* margin-left: 4.5px; */
       
+    }
+    .emptyCartimg{
+        /* border: 5px solid red; */
+        position: relative;
+        width: 80%;
+        height: 80vh;
     }
 
 }

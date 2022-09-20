@@ -74,7 +74,7 @@ function Cart(){
             
             shwocart ? 
             <>
-            <img src="https://cdni.iconscout.com/illustration/premium/thumb/empty-cart-4816550-4004141.png" alt="empty cart" />
+            <img className="emptyCartimg" src="https://cdni.iconscout.com/illustration/premium/thumb/empty-cart-4816550-4004141.png" alt="empty cart" />
             </>
 
             :
