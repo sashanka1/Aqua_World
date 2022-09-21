@@ -56,6 +56,10 @@ function Navbar() {
           <div className="left_div">
             <Link to="/">Aqua World</Link>
           </div>
+          <div className="middle_div">
+            <input type="text"  placeholder="search"/>
+            <button>search</button>
+          </div>
           <div className="right_div">
             <button
               onClick={() => {
