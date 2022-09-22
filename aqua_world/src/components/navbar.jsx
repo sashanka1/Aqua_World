@@ -15,6 +15,7 @@ function Navbar() {
   const { islogedin } = useContext(IsuserContext);
   const { verifylogdin } = useContext(IsuserContext);
   const [popup, setPopup] = useState(false);
+  const [previous, Setprevious] = useState(0)
   const cartPCount = async () => {
     var res = verifylogdin();
     // console.log("islogedin",res)
@@ -45,6 +46,22 @@ function Navbar() {
     localStorage.removeItem("user")
     window.location.reload(true);
   }
+  //adding throutling to the serch button
+  const throttle = (funofde,delay)=>{
+    return(...args)=>{
+      let currentTime = new Date().getTime();
+      let def = currentTime-previous;
+      console.log(def,delay);
+      if(def>delay){
+        Setprevious(currentTime);
+        return funofde(...args)
+      }
+    }
+  }
+    const serch = throttle(()=>{
+      console.log("button clicked")
+    },3000)
+  //end of serch function
   useEffect(() => {
     cartPCount();
   }, []);
@@ -58,7 +75,7 @@ function Navbar() {
           </div>
           <div className="middle_div">
             <input type="text"  placeholder="search"/>
-            <button>search</button>
+            <button onClick={()=>{serch()}}>search</button>
           </div>
           <div className="right_div">
             <button
