@@ -1,8 +1,10 @@
 import "./css/payment.css"
-import { useState } from "react";
+import { useState,useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { IsuserContext } from "../context/isoth.context";
 
 function Payment(){
+    const {verifylogdin} = useContext(IsuserContext)
     const[getcard,setcard]=useState({
         card_no:"",
         card_name:"",
@@ -10,11 +12,32 @@ function Payment(){
         card_CVV:"",
     })
     const navigarttootp =useNavigate();
-    const Handleclick=()=>{
+    const Handleclick=async ()=>{
         console.log(getcard)
          
         if(getcard.card_no && getcard.card_name && getcard.card_expiry && getcard.card_CVV && getcard.card_no .length===16 && getcard.card_CVV.length===3 && isNaN(getcard.card_no)===false ){
             //navigate
+            let verify = verifylogdin();
+
+            if(verify){
+                console.log(verify)
+                var userdetalis = JSON.parse(localStorage.getItem("user")) || [];
+               let respBack =  await fetch(`https://backend-api-sss.herokuapp.com/cartp?all=${userdetalis.user._id}`,{
+                    method:"DELETE",
+                    headers:{
+                        "content-Type":"application/json"
+                    },
+                });
+                 let respMassage = await respBack.json();
+                //console.log(respMassage,"respMessage")
+                alert(`${respMassage.message}`)
+
+            }
+            else{
+                alert("logedin to continue")
+            }
+
+           
             navigarttootp("/cart/payment/conform")
 
             console.log("navigare to next")
