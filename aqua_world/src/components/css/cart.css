@@ -1,8 +1,13 @@
 .cartmain{
     display: grid;
-    grid-template-columns: repeat(4, 3fr);
-    width: 99%;
-    /* border: 1px solid red; */
+    grid-template-columns: repeat(10, 1fr);
+    gap: 8px;
+    width: 86%;
+    margin: auto;
+    align-items: center;
+    margin-top: 100px;
+position: relative;
+    /* border: 10px solid red; */
     margin-top: 20px;
 }
 .cartitm{
@@ -30,6 +35,7 @@
     align-items: center;
     text-align: center;
     font-size: 20px;
+    color: white;
 }
 .cartitm>button{
     margin: auto;
@@ -45,17 +51,20 @@
 }
 
 .paymentcont{
-    border: 3px solid rgb(18, 21, 18);
+    /* border: 30px solid rgb(39, 172, 39); */
     width: 90%;
     margin: auto;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    background-color: black;
+   
+    
 
 }
 .paymentcont>p{
-    color: black;
+    color: white;
     font-size: 20px;
     font-weight: 600;
     /* border: 1px solid green; */
@@ -72,7 +81,7 @@
     position: relative;
     /* margin-left: calc((100vw - 120px)/2); */
     margin-top: 10px;
-    margin-right: 5px;
+    margin-right: 15px;
     /* margin-right: 5px; */
     cursor: pointer;
    
@@ -128,5 +137,12 @@
         width: 80%;
         height: 80vh;
     }
+
+    .paymentcont>p{
+        color:rgb(0, 0, 0);
+        
+        
+    }
+   
 
 }

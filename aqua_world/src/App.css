@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  background-color: black;
+  background-color:black;
+  min-height:100vh;;
 }
 
 .App-logo {
@@ -41,5 +42,5 @@ footer{
   height: 40px;
   width: 100%;
   background-color: rgb(44, 180, 185);
-  margin-top: 50px;
+  margin-top:230px;
 }

@@ -2,6 +2,8 @@
     /* border: 1px solid red; */
     display:grid;
     grid-column: repeat(1,12fr);
+    position: relative;
+    margin-top: 10px;
 }
 
  .trow{
@@ -23,6 +25,7 @@ td{
     margin-left: calc((100vw-120px)/2);
     background-color: rgb(13, 132, 132);
     cursor: pointer;
+    color: white;
     
    
 }
