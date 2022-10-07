@@ -17,6 +17,8 @@ function Navbar() {
   const [popup, setPopup] = useState(false);
   const [previous, Setprevious] = useState(0)
   const [theProductNames,SetProductNames] = useState([]);
+  const [serchValue,SetSerchValue] = useState("") // value of the serch field
+  const [filterField,SetFilterField] = useState([])
 
   const productName = async()=>{ // function to get all product names
     let data = await fetch("http://localhost:5400/aquap").then((res)=>{
@@ -32,7 +34,19 @@ function Navbar() {
     
   }
 
-  const setsuggetion= ()=>{
+
+  const handlechange = (e)=>{
+  
+    SetSerchValue(e.target.value);
+    console.log(serchValue)
+
+    let filteredData =  theProductNames.filter((elem)=>{ // filtering the data and setting the debouncing data
+      if(elem.includes(e.target.value.toLowerCase())){
+        return elem;
+    }
+    })
+    SetFilterField([...filteredData])
+
     
   }
   const cartPCount = async () => {
@@ -78,7 +92,7 @@ function Navbar() {
     }
   }
     const serch = throttle(()=>{
-      console.log("button clicked",theProductNames)
+      console.log("button clicked",filterField)
     },3000)
   //end of serch function
   useEffect(() => {
@@ -95,7 +109,7 @@ function Navbar() {
             <Link to="/">Aqua World</Link>
           </div>
           <div className="middle_div">
-            <input type="text"  placeholder="search"/>
+            <input type="text"  placeholder="search" name="serchValue" value={serchValue} onChange={handlechange}/>
             <button onClick={()=>{serch()}}>search</button>
           </div>
           <div className="right_div">
