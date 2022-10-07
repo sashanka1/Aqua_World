@@ -6,8 +6,9 @@
 
 
 .navdiv{
+  
     height: 80px;
-     width: 100vw;
+     width: 100%;
      background-color: rgb(9, 167, 167);
      /* border: 1px solid red; */
      display: flex;
@@ -36,7 +37,7 @@ font-size: 2vw;
     color: black;
 }
 .middle_div{
-    /* border: 1px solid red; */
+    border: 1px solid red;
     display: flex;
     justify-content: space-around;
 

@@ -16,6 +16,25 @@ function Navbar() {
   const { verifylogdin } = useContext(IsuserContext);
   const [popup, setPopup] = useState(false);
   const [previous, Setprevious] = useState(0)
+  const [theProductNames,SetProductNames] = useState([]);
+
+  const productName = async()=>{ // function to get all product names
+    let data = await fetch("http://localhost:5400/aquap").then((res)=>{
+     
+      return res.json();
+    });
+    //console.log(data)
+    let PName = data.map((e)=>{
+      return e.name;
+    })
+    SetProductNames([...PName]) // setting the name of all products in a state to use for debouncing
+    // console.log(PName,"thepname")
+    
+  }
+
+  const setsuggetion= ()=>{
+    
+  }
   const cartPCount = async () => {
     var res = verifylogdin();
     // console.log("islogedin",res)
@@ -59,12 +78,14 @@ function Navbar() {
     }
   }
     const serch = throttle(()=>{
-      console.log("button clicked")
+      console.log("button clicked",theProductNames)
     },3000)
   //end of serch function
   useEffect(() => {
+    productName();
     cartPCount();
   }, []);
+  
 
   return (
     <>
