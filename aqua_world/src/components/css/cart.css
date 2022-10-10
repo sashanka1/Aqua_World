@@ -9,6 +9,7 @@
 position: relative;
     /* border: 10px solid red; */
     margin-top: 20px;
+    overflow-y: scroll;
 }
 .cartitm{
     height: 250px;

@@ -11,12 +11,13 @@ import{Payment} from "./components/payment";
 import{Thanks} from "./components/conform";
 import{Adress} from "./components/address";
 import{Addnewaddress} from "./components/addnewAddress"
+import{Serchbounce} from "./components/search"
+import {Footer} from "./components/footer"
  
 function App() {
   return (
     <div className="App">
       <Navbar/>
-     
 
       <Routes>
       <Route path= {"/login"} element= {<Login/>}></Route>
@@ -31,7 +32,7 @@ function App() {
       <Route path = {"/Modifyaddress"} element = {<Addnewaddress/>}></Route>
       <Route path = {"/Serchbounce"} element = {<Serchbounce/>}></Route>
      </Routes>
-     <footer></footer>
+     <Footer/>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { useState,createContext} from "react";
 
-export  const searchContext = createContext();
+export  const SearchContext = createContext();
 
 const SearchContextProvider = ({children})=>{
     const [recomendData, Setrecombeddata] = useState([]);
@@ -8,7 +8,7 @@ const SearchContextProvider = ({children})=>{
         Setrecombeddata([...v])
     }
 
-    return <searchContext.Provider value = {{recomendData,setdata}}>{children}</searchContext.Provider>
+    return <SearchContext.Provider value = {{recomendData,setdata}}>{children}</SearchContext.Provider>
     
 }
 
