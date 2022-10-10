@@ -8,8 +8,10 @@ import { IsuserContext } from "../context/isoth.context";
 import { useContext, useState, useEffect } from "react";
 import "./css/nav.css";
 import { Link } from "react-router-dom";
+import {Serchbounce} from "./search"
 function Navbar() {
   let navigate = useNavigate();
+  const navigateToserch = useNavigate();
   const { cartcount } = useContext(CartCountContext);
   const { updateCartCount } = useContext(CartCountContext);
   const { islogedin } = useContext(IsuserContext);
@@ -21,7 +23,7 @@ function Navbar() {
   const [filterField,SetFilterField] = useState([])
 
   const productName = async()=>{ // function to get all product names
-    let data = await fetch("http://localhost:5400/aquap").then((res)=>{
+    let data = await fetch("https://backend-api-sss.herokuapp.com/aquap").then((res)=>{
      
       return res.json();
     });
@@ -108,10 +110,21 @@ function Navbar() {
           <div className="left_div">
             <Link to="/">Aqua World</Link>
           </div>
+          <span className="middle">
+
           <div className="middle_div">
-            <input type="text"  placeholder="search" name="serchValue" value={serchValue} onChange={handlechange}/>
-            <button onClick={()=>{serch()}}>search</button>
+            <input type="text" onClick={()=>{navigateToserch("/Serchbounce")}}  placeholder="search" name="serchValue" value={serchValue} onChange={handlechange}/>
+            {/* <button onClick={()=>{serch()}}>search</button> */}
           </div>
+          <div className="debounce">
+            {/* <p>gold fish</p>
+            <p>neon tetra</p>
+            <p>angle fish</p>
+            <p>gold fish</p>
+            <p>neon tetra</p>
+            <p>angle fish</p> */}
+          </div>
+          </span>
           <div className="right_div">
             <button
               onClick={() => {
@@ -151,6 +164,7 @@ function Navbar() {
           </div>
         </div>
         <div className="filter_by_reating"></div>
+    
       </nav>
     </>
   );
