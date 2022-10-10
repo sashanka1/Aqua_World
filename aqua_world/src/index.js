@@ -8,11 +8,13 @@ import {BrowserRouter} from "react-router-dom";
 import {CartCountContextProvider} from "./context/cart_count_context";
 import{IsuserContextProvider} from "./context/isoth.context"
 import { SearchContextProvider } from './context/search_context';
+import { SerchThisContextProvider } from './context/search_this_product.context';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
    
     <BrowserRouter>
+      <SerchThisContextProvider>
     <SearchContextProvider>
     <IsuserContextProvider>
     <CartCountContextProvider>
@@ -22,6 +24,7 @@ root.render(
     </CartCountContextProvider>
     </IsuserContextProvider>
     </SearchContextProvider>
+    </SerchThisContextProvider>
     </BrowserRouter>
     
   </React.StrictMode>

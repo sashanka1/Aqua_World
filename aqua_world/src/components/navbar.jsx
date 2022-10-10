@@ -42,7 +42,7 @@ function Navbar() {
   const handlechange = (e)=>{
   
     SetSerchValue(e.target.value);
-    console.log(serchValue)
+    // console.log(serchValue)
 
     let filteredData =  theProductNames.filter((elem)=>{ // filtering the data and setting the debouncing data
       if(elem.includes(e.target.value.toLowerCase())){

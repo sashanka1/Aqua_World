@@ -9,9 +9,9 @@
     const setcart= async(e)=>{
         const checkuser = verifylogdin();
         if(checkuser){ // checking the user is logind in or not
-            console.log(e)
+            // console.log(e) the data in form of object of the clicked product
         var userdetalis = JSON.parse(localStorage.getItem("user"))|| []
-        console.log("inside show product",userdetalis.user._id)
+        // console.log("inside show product",userdetalis.user._id)
         await fetch("https://backend-api-sss.herokuapp.com/cartp", {
             method:"post",
             body:JSON.stringify({
