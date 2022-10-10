@@ -29,6 +29,7 @@ function App() {
       <Route path = {"/cart/payment/conform"} element = {<Thanks/>}></Route>
       <Route path = {"/adress"} element = {<Adress/>}></Route>
       <Route path = {"/Modifyaddress"} element = {<Addnewaddress/>}></Route>
+      <Route path = {"/Serchbounce"} element = {<Serchbounce/>}></Route>
      </Routes>
      <footer></footer>
     </div>

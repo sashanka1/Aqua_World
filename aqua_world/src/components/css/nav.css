@@ -36,25 +36,39 @@ font-size: 2vw;
     text-decoration: none;
     color: black;
 }
+.middle{
+    border: 3px solid rgb(28, 56, 232);
+}
 .middle_div{
     border: 1px solid red;
     display: flex;
+    display: block;
     justify-content: space-around;
 
+}
+.debounce{
+    /* border: 13px solid rgb(62, 148, 86); */
+    color: white;
+}
+.debounce>p{
+    /* border: 3px solid rgb(247, 0, 202); */
+    color: white;
+    z-index: 3;
 }
 .middle_div >input{
     width: 15vw;  
 }
-.middle_div>button{
+/* .middle_div>button{
     width: 5vw;
     cursor: pointer;
-}
-.middle_div>button:hover{
+    visibility: hidden;
+} */
+/* .middle_div>button:hover{
     background-color: green;
     color: white;
     box-shadow: rgba(232, 39, 39, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     
-}
+} */
 
 .right_div{
     height: 100%;

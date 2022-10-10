@@ -3,6 +3,7 @@
     width: 102%;
     margin: auto;
     background-color: rgb(11, 11, 11);
+   
 }
 
 .fristimgs{
@@ -10,6 +11,7 @@
     width: 101%;
     /* border: 1px solid red; */
     margin: auto;
+    z-index: 1;
 }
 .fristimgs>img{
     height: 100%;
