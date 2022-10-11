@@ -48,7 +48,7 @@
 }
 
 
-@media only screen and (min-width :0px) and (max-width:400px) {
+@media only screen and (min-width :0px) and (max-width:430px) {
     .home{
         /* border: 1px solid red; */
         width: 100%;
