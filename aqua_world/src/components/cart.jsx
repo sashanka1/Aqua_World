@@ -26,7 +26,7 @@ function Cart(){
         let data = await fetch(`https://backend-api-sss.herokuapp.com/cartp?theuser=${userdetalis.user._id}`);
         let res = await data.json();
         console.log("the cartdata of the user" ,res);
-        Setcartitm([...res]);
+        Setcartitm([...res]); // seting the cart products of the user in a state
         updateCartCount(res.length)
         if(res.length>0){
             setShowcart(false);

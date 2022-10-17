@@ -6,26 +6,74 @@ import { IsuserContext } from "../context/isoth.context";
 function Payment(){
     const {verifylogdin} = useContext(IsuserContext)
     const[getcard,setcard]=useState({
-        card_no:"",
+        card_no:"",                      // sate for the payment form
         card_name:"",
         card_expiry:"",
         card_CVV:"",
     })
-    const navigarttootp =useNavigate();
-    const Handleclick=async ()=>{
+  
+        const navigarttootp =useNavigate(); 
+    const Handleclick=async ()=>{ // trigger the function when user click on the checkout button
         console.log(getcard)
          
         if(getcard.card_no && getcard.card_name && getcard.card_expiry && getcard.card_CVV && getcard.card_no .length===16 && getcard.card_CVV.length===3 && isNaN(getcard.card_no)===false ){
             //navigate
-            let verify = verifylogdin();
+            let verify = verifylogdin(); //chacking the user is loged in or not.
 
-            if(verify){
-                console.log(verify)
+            if(verify){ // if return true the it will exicute inside code
+                // url for product collection -http://localhost:5400/order
+
+                // call the user and get the address 
+                // take the user id 
+                // call the cart rout with the user id to get all cart itom of that user and create a desired objest 
+                // call the order rout and call a post requrst with user id ,address ,created order array
+                // remove the itoms of the user from the user cart
                 var userdetalis = JSON.parse(localStorage.getItem("user")) || [];
+                let theuserId = userdetalis.user._id; // the id of the logedin user;
+                  //get the address of the user
+                        let user = await fetch(`https://backend-api-sss.herokuapp.com/userdata/${theuserId}`).then((res)=>{
+                            return res.json();
+                        })
+                     
+                       
+                            let UserOrderAddress = // creating a address object for the order;
+                                {"name":user[0].adresses[0].name,"state":user[0].adresses[0].state,
+                                    "dist":user[0].adresses[0].dist,
+                                    "areaPin":user[0].adresses[0].areaPin,
+                                    "landmark":user[0].adresses[0].landmark,
+                                    "mobileNo":user[0].adresses[0].mobileNO}
+                            
+                        
+                        // end
+                        // get all cart items of the user ;
+                        let cartdata = await fetch(`https://backend-api-sss.herokuapp.com/cartp?theuser=${userdetalis.user._id}`);
+                        let res = await cartdata.json();
+                        
+                        let filtereddata = res.map((e)=>{ // using map on cartdata to make array of object with specific data for order
+
+                            let temp = {
+                                catagory:e.catagory,
+                                productImage:e.image,
+                                productName:e.name,
+                                productPrice:e.price
+                            };
+                              
+                            return temp;
+                        })
+                       
+
+                console.log(verify)
+                            
+                //setUserCartItomInUserOrder 
+                postTheData(theuserId,UserOrderAddress,filtereddata) // calling the post order function with arguments;
+               // console.log(theuserId,userAddress,productArr,"the post details")
+
+              
+                
                let respBack =  await fetch(`https://backend-api-sss.herokuapp.com/cartp?all=${userdetalis.user._id}`,{
                     method:"DELETE",
                     headers:{
-                        "content-Type":"application/json"
+                        "content-Type":"application/json" // clearing the user cart;
                     },
                 });
                  let respMassage = await respBack.json();
@@ -46,11 +94,30 @@ function Payment(){
             alert("Invalid Details")
         }
     }
+    
+    const postTheData = async(theuserId,UserOrderAddress,filtereddata)=>{ // function to post the order;
+        
+        await fetch(`http://localhost:5400/order`,{
+            method:"POST",
+            body:JSON.stringify({
+                theUserId:theuserId,
+                date:new Date(),
+                address:UserOrderAddress,
+                orderArr:filtereddata,
+                    
+                
+            }),
+            headers:{
+                "content-Type":"application/json"
+            }
+            
+        }).then((res)=>console.log(res.json()))
+    }
 
     const handleInput = (e) => {
        
 
-        setcard({ ...getcard, [e.target.name]: e.target.value });
+        setcard({ ...getcard, [e.target.name]: e.target.value }); // form input handling on change in from input
         // console.log(getcard);
       };
     return(
