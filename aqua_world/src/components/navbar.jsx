@@ -153,7 +153,7 @@ function Navbar() {
                     <Link to="/adress">Address</Link>
                   </ul>
                   <ul>Profile</ul>
-                  <ul>Orders</ul>
+                  <ul><Link to="/Order">Orders</Link></ul>
                   <ul onClick={()=>{logoutUser()}}>Logout</ul>
                 </div>
               </ClickAwayListener>

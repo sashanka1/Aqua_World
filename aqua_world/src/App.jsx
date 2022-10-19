@@ -13,6 +13,7 @@ import{Adress} from "./components/address";
 import{Addnewaddress} from "./components/addnewAddress"
 import{Serchbounce} from "./components/search"
 import {Footer} from "./components/footer"
+import {Order} from "./components/orders"
  
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
       <Route path = {"/adress"} element = {<Adress/>}></Route>
       <Route path = {"/Modifyaddress"} element = {<Addnewaddress/>}></Route>
       <Route path = {"/Serchbounce"} element = {<Serchbounce/>}></Route>
+      <Route path = {"/Order"} element = {<Order/>}></Route>
      </Routes>
      <Footer/>
     </div>

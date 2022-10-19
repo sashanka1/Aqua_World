@@ -1,0 +1,81 @@
+.forspace{
+    height: 50px;
+}
+
+.maincont {
+    margin-top: 50px;
+    /* height: 400px; */
+   width: 50%;
+   margin: auto;
+    /* border: 5px solid red; */
+}
+.address>p{
+    color: rgb(20, 19, 19);
+
+    padding: 5px;
+   
+}
+.address{
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+
+}
+.shallcards{
+    color: rgb(23, 18, 18);
+    border: 1px solid rgb(221, 239, 23);
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    height: 60px;
+}
+.shallcards>img{
+ height: 55px;
+ width: 55px;
+ padding-right: 50px;
+}
+.shallcards>p{
+  padding: 15px;
+  font-weight: 800;
+}
+.theordercard{
+    border: 1px solid rgb(254, 254, 254);
+    background-color: rgb(212, 209, 205);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@media only screen and (min-width :0px) and (max-width:430px) {
+
+    .maincont {
+       
+       width: 100%;
+       margin: auto;
+       
+    }
+
+    .shallcards{
+        color: rgb(23, 18, 18);
+        border: 1px solid rgb(221, 239, 23);
+        /* display: flex;
+        justify-content: flex-start;
+       
+        flex-direction: column; */
+        display: grid;
+        grid-template-columns: repeat(2,5fr);
+        height: 100px;
+    }
+
+    .shallcards>p{
+        padding: 5px;
+        height: fit-content;
+        
+        font-weight: 800;
+        
+      }
+      .shallcards>img{
+        height: 55px;
+        width: 55px;
+        padding-right: 10px;
+       }
+}
