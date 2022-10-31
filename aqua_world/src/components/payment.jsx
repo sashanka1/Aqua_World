@@ -97,7 +97,7 @@ function Payment(){
     
     const postTheData = async(theuserId,UserOrderAddress,filtereddata)=>{ // function to post the order;
         
-        await fetch(`http://localhost:5400/order`,{
+        await fetch(`https://backend-api-sss.herokuapp.com/order`,{
             method:"POST",
             body:JSON.stringify({
                 theUserId:theuserId,
