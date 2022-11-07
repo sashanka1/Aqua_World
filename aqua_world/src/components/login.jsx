@@ -3,6 +3,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 
 
+
 function Login(){
     const navigateToHome = useNavigate();
     
@@ -45,10 +46,14 @@ function Login(){
 
     }
     return(
+        <div className="logincontner">
+            <img src="https://t4.ftcdn.net/jpg/01/22/71/95/360_F_122719584_A863mvJEcEAnqmGQ4ky6RbXEhsHKw95x.jpg" alt="" />
+      
         <div className="login">
             <input type="text" name = "email" value={logindata.email} placeholder="enter email" onChange={handlechange}/>
             <input type="password" placeholder="enter password" name = "password" value={logindata.password} onChange={handlechange} />
              <button  onClick={()=>{handleclick()}}>login</button>
+        </div>
         </div>
     )
 }
