@@ -27,7 +27,7 @@ function Signin() {
     if(formdata.username.length >0 && formdata.email.includes("@") && formdata.password.length>3 && formdata.conform_password===formdata.password &&
     formdata.state.length>0 && formdata.areaPin>=6 && formdata.landmark.length>10 && formdata.mobileNo.length>=10){
       
-      let resp = await fetch("https://backend-api-sss.herokuapp.com/register", {
+      let resp = await fetch("https://backendserver-vgix.onrender.com/register", {
         method:"post",
         body:JSON.stringify({
             username: formdata.username,
