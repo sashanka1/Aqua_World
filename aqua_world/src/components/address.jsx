@@ -21,7 +21,7 @@ function Adress() {
 
       // let data = await fetch(`https://backend-api-sss.herokuapp.com/userdata/${theUserId}`);
       let data = await fetch(
-        `https://backend-api-sss.herokuapp.com/userdata/${theUserId}`
+        `https://backendserver-vgix.onrender.com/userdata/${theUserId}`
       );
       let res = await data.json();
       // console.log(res,"the all address")
