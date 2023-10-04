@@ -42,7 +42,7 @@ function Addnewaddress() {
       address.landmark.length > 10
     ) {
       await fetch(
-        `https://backend-api-sss.herokuapp.com/update_address?userId=${theid}`,
+        `https://backendserver-vgix.onrender.com/update_address?userId=${theid}`,
         {
           method: "PATCH",
           body: JSON.stringify({

@@ -31,7 +31,7 @@ function Payment(){
                 var userdetalis = JSON.parse(localStorage.getItem("user")) || [];
                 let theuserId = userdetalis.user._id; // the id of the logedin user;
                   //get the address of the user
-                        let user = await fetch(`https://backend-api-sss.herokuapp.com/userdata/${theuserId}`).then((res)=>{
+                        let user = await fetch(`https://backendserver-vgix.onrender.com/userdata/${theuserId}`).then((res)=>{
                             return res.json();
                         })
                      
@@ -46,7 +46,7 @@ function Payment(){
                         
                         // end
                         // get all cart items of the user ;
-                        let cartdata = await fetch(`https://backend-api-sss.herokuapp.com/cartp?theuser=${userdetalis.user._id}`);
+                        let cartdata = await fetch(`https://backendserver-vgix.onrender.com/cartp?theuser=${userdetalis.user._id}`);
                         let res = await cartdata.json();
                         
                         let filtereddata = res.map((e)=>{ // using map on cartdata to make array of object with specific data for order
@@ -70,7 +70,7 @@ function Payment(){
 
               
                 
-               let respBack =  await fetch(`https://backend-api-sss.herokuapp.com/cartp?all=${userdetalis.user._id}`,{
+               let respBack =  await fetch(`https://backendserver-vgix.onrender.com/cartp?all=${userdetalis.user._id}`,{
                     method:"DELETE",
                     headers:{
                         "content-Type":"application/json" // clearing the user cart;
@@ -97,7 +97,7 @@ function Payment(){
     
     const postTheData = async(theuserId,UserOrderAddress,filtereddata)=>{ // function to post the order;
         
-        await fetch(`https://backend-api-sss.herokuapp.com/order`,{
+        await fetch(`https://backendserver-vgix.onrender.com/order`,{
             method:"POST",
             body:JSON.stringify({
                 theUserId:theuserId,

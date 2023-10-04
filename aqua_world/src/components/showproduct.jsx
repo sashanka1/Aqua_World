@@ -12,7 +12,7 @@
             // console.log(e) the data in form of object of the clicked product
         var userdetalis = JSON.parse(localStorage.getItem("user"))|| []
         // console.log("inside show product",userdetalis.user._id)
-        await fetch("https://backend-api-sss.herokuapp.com/cartp", {
+        await fetch("https://backendserver-vgix.onrender.com/cartp", {
             method:"post",
             body:JSON.stringify({
                 main_id:e._id,

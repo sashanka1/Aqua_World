@@ -18,7 +18,7 @@ function Showaddress({ data }) {
     let theUserId = user.user._id;
     // console.log("the address id of the user",addressId)
     await fetch(
-      `https://backend-api-sss.herokuapp.com/deleteaddress?idofuser=${theUserId}&addressId=${addressId}`,
+      `https://backendserver-vgix.onrender.com/deleteaddress?idofuser=${theUserId}&addressId=${addressId}`,
       {
         method: "DELETE",
         headers: {

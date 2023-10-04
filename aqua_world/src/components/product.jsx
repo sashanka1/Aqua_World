@@ -19,8 +19,8 @@ const getdata = async()=>{
      //`http://localhost:5400/aquap?pName=${thePName}`
      //`https://backend-api-sss.herokuapp.com/aquap?pName=${thePName}`
     let data = await fetch( thePName!=="no" && thePName !== undefined ?
-    `https://backend-api-sss.herokuapp.com/aquap?pName=${thePName}`
-     : `https://backend-api-sss.herokuapp.com/aquap?pr_ca=${catagory}`)
+    `https://backendserver-vgix.onrender.com/aquap?pName=${thePName}`
+     : `https://backendserver-vgix.onrender.com/aquap?pr_ca=${catagory}`)
     let res = await data.json();
     setProductlist([...res])
     //console.log(res);

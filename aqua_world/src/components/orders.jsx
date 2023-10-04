@@ -12,7 +12,7 @@ const UserOrderedData = async()=>{
     if(verify){
         var userdetalis = JSON.parse(localStorage.getItem("user")) || [];
         let theuserId = userdetalis.user._id; // the id of the logedin user;    
-        let data = await fetch(`https://backend-api-sss.herokuapp.com/order?theuserid=${theuserId}`).then((res)=>{
+        let data = await fetch(`https://backendserver-vgix.onrender.com/order?theuserid=${theuserId}`).then((res)=>{
            return res.json()
         });
        // let datavalue = data.json();
