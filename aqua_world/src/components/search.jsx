@@ -15,13 +15,13 @@ function Serchbounce(){
 //recomendData,setdata
     return(
 
-        <div className="tabledata" style={{marginTop:"38px"}}>
+        <div className=" bg-white font-bold text-black w-2/3 h-2/3 overflow-auto scroll-smooth no-scrollbar rounded-md" >
             {
                 recomendData.length===0 ?
-                <p style={{color:"white",fontSize:"24px"}}>Not found</p>
+                <p>Not found</p>
                 :
                 recomendData.map((e)=>(
-                    <p onClick={()=>{handleProductClick(e)}} style={{color:"white",fontSize:"24px",cursor: "pointer"}} key = {nanoid()}>{e}</p>
+                    <p className=" cursor-pointer hover:bg-slate-400 text-lg border rounded-md border-gray-700 p-2 m-2" onClick={()=>{handleProductClick(e)}}  key = {nanoid()}>{e}</p>
                 ))
             }
         </div>

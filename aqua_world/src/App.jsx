@@ -1,5 +1,5 @@
 
- import './App.css';
+
 import {Routes , Route} from "react-router-dom";
 import {Navbar} from "./components/navbar"
 import {Home} from "./components/home"
@@ -17,9 +17,11 @@ import {Order} from "./components/orders"
  
 function App() {
   return (
-    <div className="App">
+    <div className="h-screen overflow-auto no-scrollbar min-w-full bg-gradient-to-t from-sky-950 to-sky-500 relative flex flex-col justify-between items-center">
       <Navbar/>
-
+     <div className="absolute top-24 w-full flex flex-col justify-center flex-1 items-center">
+      
+     
       <Routes>
       <Route path= {"/login"} element= {<Login/>}></Route>
       <Route path= {"/signin"} element= {<Signin/>}></Route>
@@ -34,7 +36,8 @@ function App() {
       <Route path = {"/Serchbounce"} element = {<Serchbounce/>}></Route>
       <Route path = {"/Order"} element = {<Order/>}></Route>
      </Routes>
-     <Footer/>
+     </div>
+     {/* <Footer/> */}
     </div>
   );
 }

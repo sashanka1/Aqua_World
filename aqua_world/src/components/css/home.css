@@ -39,10 +39,11 @@
 }
 
 .catagory >div > img{
-    height: 100%;
+    height: 50%;
     width:100%;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 10%;
+   
 
  
 }
@@ -78,10 +79,10 @@
     }
     
     .catagory >div > img{
-        height: 100%;
+        height: 50%;
         width:100%;
         object-fit: cover;
-        border-radius: 50%;
+        border-radius: 10%;
     
      
     }

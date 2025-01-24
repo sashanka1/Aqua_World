@@ -7,7 +7,7 @@ import { CartCountContext } from "../context/cart_count_context";
 import { IsuserContext } from "../context/isoth.context";
 import {SearchContext} from "../context/search_context"
 import { useContext, useState, useEffect } from "react";
-import "./css/nav.css";
+
 import { Link } from "react-router-dom";
 import {Serchbounce} from "./search"
 function Navbar() {
@@ -110,21 +110,21 @@ function Navbar() {
   
 
   return (
-    <>
-      <nav>
-        <div className="navdiv" style={{ height: "40px", width: "99vw" }}>
-          <div className="left_div">
+  
+      <nav className="h-20 z-40  min-w-full bg-sky-500 flex justify-between items-center fixed">
+     
+          <div className=" pl-3 font-bold text-cyan-950 text-3xl">
             <Link to="/">Aqua World</Link>
           </div>
          
 
-          <div className="middle_div">
-            <input type="text" onClick={()=>{navigateToserch("/Serchbounce")}}  placeholder="search" name="serchValue" value={serchValue} onChange={handlechange}/>
+          <div className="w-2/4 hover:border-sky-800 border-4 p-0.5 rounded-md border-sky-950 flex justify-center ">
+            <input className="w-full focus:bg-teal-700  text-white rounded-sm bg-black p-1" type="text" onClick={()=>{navigateToserch("/Serchbounce")}}  placeholder="search" name="serchValue" value={serchValue} onChange={handlechange}/>
             {/* <button onClick={()=>{serch()}}>search</button> */}
           </div>
            
-          <div className="right_div">
-            <button
+          <div className="mr-3  flex justify-around w-1/6 ">
+            <button className=" flex items-center font-bold"
               onClick={() => {
                 {
                   showCartOrNot();
@@ -132,7 +132,7 @@ function Navbar() {
               }}
             >
               <BsFillCartCheckFill />
-              {cartcount}
+             : {cartcount}
             </button>
             {/* <button><Link to="/login">login</Link></button>
        <button><Link to="/signin">signin</Link></button> */}
@@ -142,29 +142,28 @@ function Navbar() {
             {/*rem */}
             {popup && (
               <ClickAwayListener onClickAway={() => setPopup(false)}>
-                <div className={"popup"}>
-                  <ul>
-                    <Link to="/login">Login</Link>
+                <div className="absolute bg-sky-400 rounded-md font-bold top-24 p-4 grid grid-cols-1 text-center text-sm mr-4 gap-4 ">
+                  <ul className=" p-1 border rounded-md bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% hover:border-pink-600">
+                    <Link className = "" to="/login">Login</Link>
                   </ul>
-                  <ul>
+                  <ul className="p-1 border rounded-md bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% hover:border-pink-600">
                     <Link to="/signin">Signup</Link>
                   </ul>
-                  <ul>
+                  <ul className="p-1 border rounded-md bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% hover:border-pink-600">
                     <Link to="/adress">Address</Link>
                   </ul>
-                  <ul>Profile</ul>
-                  <ul><Link to="/Order">Orders</Link></ul>
-                  <ul onClick={()=>{logoutUser()}}>Logout</ul>
+                  <ul className="p-1 border rounded-md bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% hover:border-pink-600">Profile</ul>
+                  <ul className="p-1 border rounded-md bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% hover:border-pink-600"><Link to="/Order">Orders</Link></ul>
+                  <ul className=" p-1 border cursor-pointer rounded-md bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:border-pink-600" onClick={()=>{logoutUser()}}>Logout</ul>
                 </div>
               </ClickAwayListener>
             )}
             <Link to="/"></Link>
           </div>
-        </div>
-        <div className="filter_by_reating"></div>
+       
     
       </nav>
-    </>
+ 
   );
 }
 export { Navbar };
