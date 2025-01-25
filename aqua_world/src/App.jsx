@@ -1,6 +1,7 @@
 
 
 import {Routes , Route} from "react-router-dom";
+import { useEffect } from "react";
 import {Navbar} from "./components/navbar"
 import {Home} from "./components/home"
 import {Product} from "./components/product"
@@ -13,11 +14,34 @@ import{Adress} from "./components/address";
 import{Addnewaddress} from "./components/addnewAddress"
 import{Serchbounce} from "./components/search"
 import {Footer} from "./components/footer"
-import {Order} from "./components/orders"
+import {Order} from "./components/orders";
+
+
+
  
 function App() {
+  useEffect(() => {
+    // Ensure the script is loaded before using particles.js
+    if (window.particlesJS) {
+      window.particlesJS('particles-js', {
+        particles: {
+          number: {
+            value: 100,
+          },
+          size: {
+            value: 3,
+          },
+          links: {
+            enable: true,
+            distance: 150,
+          },
+        },
+      });
+    }
+  }, []);
+
   return (
-    <div className="h-screen overflow-auto no-scrollbar min-w-full bg-gradient-to-t from-sky-950 to-sky-500 relative flex flex-col justify-between items-center">
+    <div id="particles-js" className=" h-screen overflow-auto no-scrollbar min-w-full bg-gradient-to-t from-sky-950 to-sky-500 relative flex flex-col justify-between items-center">
       <Navbar/>
      <div className="absolute top-24 w-full flex flex-col justify-center flex-1 items-center">
       
