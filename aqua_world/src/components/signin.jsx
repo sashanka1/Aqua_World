@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./css/signin.css";
 import { useNavigate } from "react-router-dom";
 
 function Signin() {
@@ -70,8 +69,9 @@ function Signin() {
 
   };
   return (
-    <div className="signinCont">
+    <div className="border rounded-md w-3/5 max-w-96 p-3 grid grid-cols-2 gap-5 grid-flow-row shadow-lg shadow-lime-400">
       <input
+      className="col-span-2 p-2 rounded-md placeholder:text-blue-700 font-bold border-4 border-blue-600 hover:bg-blue-200 focus:border-blue-800"
         type="text"
         name="username"
         value={formdata.username}
@@ -80,6 +80,7 @@ function Signin() {
         onChange={handlechange}
       />
       <input
+          className=" col-span-2 p-2 rounded-md placeholder:text-blue-700 font-bold border-4 border-blue-600 hover:bg-blue-200 focus:border-blue-800"
         type="email"
         name="email"
         value={formdata.email}
@@ -88,6 +89,7 @@ function Signin() {
         onChange={handlechange}
       />
       <input
+        className=" p-2 rounded-md placeholder:text-blue-700 font-bold border-4 border-blue-600 hover:bg-blue-200 focus:border-blue-800"
         type="password"
         name="password"
         value={formdata.password}
@@ -96,6 +98,7 @@ function Signin() {
         onChange={handlechange}
       />
       <input
+        className=" p-2 rounded-md placeholder:text-blue-700 font-bold border-4 border-blue-600 hover:bg-blue-200 focus:border-blue-800"
         type="password"
         name="conform_password"
         value={formdata.conform_password}
@@ -104,6 +107,7 @@ function Signin() {
         onChange={handlechange}
       />
       <input
+        className=" p-2 rounded-md placeholder:text-blue-700 font-bold border-4 border-blue-600 hover:bg-blue-200 focus:border-blue-800"
         type="text"
         name="state"
         value={formdata.state}
@@ -112,6 +116,7 @@ function Signin() {
         onChange={handlechange}
       />
       <input
+        className=" p-2 rounded-md placeholder:text-blue-700 font-bold border-4 border-blue-600 hover:bg-blue-200 focus:border-blue-800"
         type="text"
         name="dist"
         value={formdata.dist}
@@ -120,6 +125,7 @@ function Signin() {
         onChange={handlechange}
       />
       <input
+        className=" p-2 rounded-md placeholder:text-blue-700 font-bold border-4 border-blue-600 hover:bg-blue-200 focus:border-blue-800"
         type="text"
         name="areaPin"
         value={formdata.areaPin}
@@ -128,6 +134,7 @@ function Signin() {
         onChange={handlechange}
       />
       <input
+        className=" p-2 rounded-md placeholder:text-blue-700 font-bold border-4 border-blue-600 hover:bg-blue-200 focus:border-blue-800"
         type="text"
         name="landmark"
         value={formdata.landmark}
@@ -136,6 +143,7 @@ function Signin() {
         onChange={handlechange}
       />
       <input
+         className=" col-span-2 p-2 rounded-md placeholder:text-blue-700 font-bold border-4 border-blue-600 hover:bg-blue-200 focus:border-blue-800"
         type="text"
         name="mobileNo"
         value={formdata.mobileNo}
@@ -143,7 +151,7 @@ function Signin() {
         required
         onChange={handlechange}
       />
-      <button onClick={submit}>singin</button>
+      <button className="p-2 mt-4 hover:bg-blue-700 shadow-lg shadow-green-600 border w-3/5 mx-auto rounded-md font-bold bg-blue-800 text-white col-span-2"  onClick={submit}>SignUp</button>
     </div>
   );
 }

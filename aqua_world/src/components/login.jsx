@@ -46,15 +46,15 @@ function Login(){
 
     }
     return(
-        <div className="logincontner">
-            <img src="https://t4.ftcdn.net/jpg/01/22/71/95/360_F_122719584_A863mvJEcEAnqmGQ4ky6RbXEhsHKw95x.jpg" alt="" />
+     
+          
       
-        <div className="login">
-            <input type="text" name = "email" value={logindata.email} placeholder="enter email" onChange={handlechange}/>
-            <input type="password" placeholder="enter password" name = "password" value={logindata.password} onChange={handlechange} />
-             <button  onClick={()=>{handleclick()}}>login</button>
+        <div className="grid grid-cols-1 gap-4 w-2/5 min-w-80 border-2 p-6 rounded-md shadow-lg shadow-lime-500">
+            <input className="p-2 focus:border-blue-600 hover:bg-blue-300 rounded-md border-4 border-blue-600 placeholder:text-blue-600 font-bold" type="text" name = "email" value={logindata.email} placeholder="Email" onChange={handlechange}/>
+            <input className="p-2 hover:bg-blue-300 rounded-md border-4 border-blue-600   placeholder:text-blue-600 font-bold" type="password" placeholder="Password" name = "password" value={logindata.password} onChange={handlechange} />
+             <button className="p-2 mt-4 hover:bg-blue-700 shadow-lg shadow-green-600 border w-3/5 mx-auto rounded-md font-bold bg-blue-800 text-white" onClick={()=>{handleclick()}}>SignIn</button>
         </div>
-        </div>
+       
     )
 }
 
