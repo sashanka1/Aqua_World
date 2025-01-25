@@ -42,11 +42,15 @@
 // _id: "62fbd9f179cc4f03c3eac39a"
 
     return data.map((e)=>(
-        <div className="card" key={nanoid()}>
-        <img src={e.image} alt="" />
+        <div className="hover:border-yellow-600 border h-28 grid grid-cols-12 rounded-md" key={nanoid()}>
+         <div className="h-28 col-span-5">
+        <img className ="p-1 rounded-lg h-28 w-full" src={e.image} alt="" />
+        </div>
+        <div className="col-span-7 flex flex-col items-center justify-center font-bold ">
         <h3>{e.name}</h3>
         <h3>Price-₹ {e.price}</h3>
-        <button onClick={()=>{setcart(e)}}>add to cart</button>
+        <button className=" hover:bg-blue-600 border p-1 m-1 rounded-md bg-blue-800 text-white" onClick={()=>{setcart(e)}}>add to cart</button>
+        </div>
         </div>
     ))
 

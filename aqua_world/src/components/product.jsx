@@ -4,7 +4,7 @@ import { SerchThis } from "../context/search_this_product.context";
 import {Circles} from "react-loader-spinner"
 import { useContext, useEffect, useState } from "react";
 import{Showproduct} from "./showproduct";
-import "./css/product.css"
+
 import "./css/loder.css"
 function Product(){
     const {catagory} = useContext(CatagoryContect);
@@ -31,12 +31,12 @@ getdata();
 },[])
 
 return(
-    <span className="mainproduct_cont">
+    <span className="  w-full flex flex-col items-center justify-center">
         
     
   
-    <h1 className="catagoryofp">{catagory}</h1>
-    <div  className="cards">
+    <h1 className=" shadow-2xl m-4 font-bold text-2xl w-2/12 rounded-sm p-1 text-center bg-gradient-to-r from-green-800 to-green-200">{catagory}</h1>
+    <div  className=" w-80 h-full grid grid-cols-1 gap-6">
         {
             loder ? 
 
