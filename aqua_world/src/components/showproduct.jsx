@@ -20,7 +20,7 @@
                 image:e.image,
                 price:e.price,
                 catagory:e.catagory,
-                userId:userdetalis.user._id // adding  product to cart
+                userId:userdetalis._id // adding  product to cart
     
             }),
             headers:{

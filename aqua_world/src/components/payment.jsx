@@ -46,7 +46,7 @@ function Payment(){
                         
                         // end
                         // get all cart items of the user ;
-                        let cartdata = await fetch(`https://backendserver-vgix.onrender.com/cartp?theuser=${userdetalis.user._id}`);
+                        let cartdata = await fetch(`https://backendserver-vgix.onrender.com/cartp?theuser=${userdetalis._id}`);
                         let res = await cartdata.json();
                         
                         let filtereddata = res.map((e)=>{ // using map on cartdata to make array of object with specific data for order

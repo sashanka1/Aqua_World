@@ -13,7 +13,7 @@ function Adress() {
     if (islogedin === true) {
       let user = JSON.parse(localStorage.getItem("user")) || [];
 
-      let theUserId = user.user._id;
+      let theUserId = user._id;
       // let allAdress = data.user.adresses;
       // console.log("user adress",allAdress)
       // setAdress([...allAdress])

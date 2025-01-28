@@ -15,7 +15,7 @@ function Showaddress({ data }) {
     if (addressId === undefined || addressId === null) {
       addressId = e._id;
     }
-    let theUserId = user.user._id;
+    let theUserId = user._id;
     // console.log("the address id of the user",addressId)
     await fetch(
       `https://backendserver-vgix.onrender.com/deleteaddress?idofuser=${theUserId}&addressId=${addressId}`,

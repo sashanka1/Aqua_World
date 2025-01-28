@@ -23,7 +23,7 @@ function Cart(){
         var userdetalis = JSON.parse(localStorage.getItem("user"))|| []
         
        if(verifylogdin()) {
-        let data = await fetch(`https://backendserver-vgix.onrender.com/cartp?theuser=${userdetalis.user._id}`);
+        let data = await fetch(`https://backendserver-vgix.onrender.com/cartp?theuser=${userdetalis._id}`);
         let res = await data.json();
         console.log("the cartdata of the user" ,res);
         Setcartitm([...res]); // seting the cart products of the user in a state

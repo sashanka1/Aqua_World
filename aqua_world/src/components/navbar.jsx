@@ -65,7 +65,7 @@ function Navbar() {
       //  console.log("inside count in nav")
       var userdetalis = JSON.parse(localStorage.getItem("user")) || [];
       let data = await fetch(
-        `https://backendserver-vgix.onrender.com/cartp?theuser=${userdetalis.user._id}`
+        `https://backendserver-vgix.onrender.com/cartp?theuser=${userdetalis._id}`
       );
       let res = await data.json();
       //console.log(res);
